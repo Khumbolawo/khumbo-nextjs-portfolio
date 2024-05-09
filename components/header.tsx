@@ -9,7 +9,8 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 
 //built in header component from react
 export default function Header() {
-  const { activeSection, setActiveSection } = useActiveSectionContext(); //using our custom hook to get the active section
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext(); //using our custom hook to get the active section
   return (
     //z index and relative are tailwind css classes. check docs
     <header className="z-[999] relative">
@@ -41,7 +42,10 @@ export default function Header() {
                     }
                   )}
                   href={link.hash}
-                  onClick={() => setActiveSection(link.name)} //sets activesection to what link we click on in the header
+                  onClick={() => {
+                    setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
+                  }} //sets activesection to what link we click on in the header
                 >
                   {link.name === activeSection && (
                     <motion.span

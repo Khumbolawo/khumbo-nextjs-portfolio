@@ -1,22 +1,11 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref, inView } = useInView({
-    threshold: 0.75, //when 75% of the section is in the viewport, the inView variable will be true
-  }); //custom hook given to us by react-intersection-observer package. updates inView variable when this section comes into view in the viewport
-  //inView variable is a bool we can now use to setactivesection to true when this component comes into view
-  const { setActiveSection } = useActiveSectionContext(); //collecting the setter from the context provider
-  useEffect(() => {
-    //wrap function in useEffect as best practice. dont really know what useeffect does yet
-    if (inView) {
-      setActiveSection("About");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("About"); //custom hook we are using to set the current active section for our nav bar animations
 
   return (
     <motion.section

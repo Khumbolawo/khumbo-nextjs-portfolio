@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Styling the line in the vertical timeline component to have a gray color */
+html {
+  --line-color: #b5b6b9;
+}
+
+/* creating a custom border black class */
+
+.borderBlack {
+  @apply border border-black/10;
+}

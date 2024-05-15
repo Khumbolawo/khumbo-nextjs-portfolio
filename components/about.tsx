@@ -18,7 +18,7 @@ export default function About() {
       id="about"
       ref={ref}
     >
-      <SectionHeading>About Me </SectionHeading>{" "}
+      <SectionHeading>About Me</SectionHeading>{" "}
       {/*this is how you pass in About me as a child to sectionheading
       .now the section heading is a reusable component
       */}

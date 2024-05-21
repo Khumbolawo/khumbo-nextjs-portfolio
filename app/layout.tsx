@@ -8,6 +8,7 @@ import Header from "@/components/header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer";
+import ThemeSwitch from "@/components/theme-switch";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +26,16 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       {/* styling main body colors and fonts from Inter font family  */}
       <body
-        className={`${inter.className} bg-[#E7E5E4] text-gray-950 relative pt-28 sm:pt-36`}
+        className={`${inter.className} bg-[#E7E5E4] text-gray-950 relative pt-28 sm:pt-36
+        dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90
+        `}
       >
         {/* creating two empty divs to create blurred color effect */}
-        <div className="bg-[#A8A29E] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
+        <div
+          className="bg-[#A8A29E] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]
+        dark:bg-[#7c7976]
+        "
+        ></div>
         <div className="bg-[#D6D3D1] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]"></div>
         <ActiveSectionContextProvider>
           {" "}
@@ -38,6 +45,8 @@ export default function RootLayout({
           <Footer />
           <Toaster position="top-right" />
         </ActiveSectionContextProvider>
+
+        <ThemeSwitch />
       </body>
     </html>
   );

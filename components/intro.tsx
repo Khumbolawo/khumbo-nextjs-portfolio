@@ -48,11 +48,10 @@ export default function Intro() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <span className="font-bold">Hello, I'm Khumbo.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">0 years</span> of experience. I loathe
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        Hello, I'm <span className="font-bold"> Khumbo.</span> I'm trying to be
+        a <span className="font-bold">full-stack developer.</span> I loathe
+        building <span className="italic">sites & apps</span>. My focus is for
+        now <span className="underline">React (Next.js)</span>.
       </motion.p>
 
       {/* contact and social media links */}
@@ -80,15 +79,15 @@ export default function Intro() {
           href="/CV.pdf"
           download
           className="group bg-white px-7 py-3 items-center flex gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105
-          transition cursor-pointer borderBlack"
+          transition cursor-pointer borderBlack dark:bg-white/10"
         >
           Download CV{" "}
-          <HiDownload className="opacity-50 group-hover:translate-y-1 transition" />{" "}
+          <HiDownload className="opacity-50 group-hover:translate-y-1 transition " />{" "}
         </a>
         <a
           href="#"
           className="text-gray-700 bg-white p-4 items-center flex gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 hover:text-gray-950
-          transition cursor-pointer borderBlack"
+          transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
         >
           {" "}
           <BsLinkedin />{" "}
@@ -96,7 +95,7 @@ export default function Intro() {
         <a
           href="https://github.com/khumbolawo"
           className="text-gray-700 bg-white p-4 items-center flex gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 hover:text-gray-950
-          transition cursor-pointer borderBlack"
+          transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
         >
           {" "}
           <BsGithub />{" "}

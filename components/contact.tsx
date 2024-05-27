@@ -25,7 +25,7 @@ export default function Contact() {
       ref={ref}
     >
       <SectionHeading>Contact</SectionHeading>
-      <p className="text-gray-700 -mt-5">
+      <p className="text-gray-700 -mt-5 dark:text-white/80">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:khumbo87@gmail.com">
           Khumbo87@gmail.com
@@ -37,7 +37,7 @@ export default function Contact() {
       action is a special nextjs thing that lets us access data from input fields and do stuff with it
       */}
       <form
-        className="mt-10 flex flex-col"
+        className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           //promises, async await, need to learn these independently
           const { data, error } = await sendEmail(formData);
@@ -51,7 +51,7 @@ export default function Contact() {
         }}
       >
         <input
-          className="h-14 px-4 rounded-lg borderBlack"
+          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="senderEmail"
           type="email"
           required
@@ -59,7 +59,7 @@ export default function Contact() {
           placeholder="Your email"
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4"
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your message"
           required
           maxLength={5000} //validation stuff for the text in the form

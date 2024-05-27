@@ -15,7 +15,9 @@ export default function Header() {
     //z index and relative are tailwind css classes. check docs
     <header className="z-[999] relative">
       <motion.div
-        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
+        className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full
+        dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75
+        "
         //how to animate our header div using motion
         initial={{ y: -100, x: "-50%", opacity: 0 }} //initial state before the animation
         animate={{ y: 0, x: "-50%", opacity: 1 }} //animation itself. header goes from -100 vertically back to default
@@ -35,10 +37,11 @@ export default function Header() {
               >
                 <Link
                   className={clsx(
-                    "flex w-full items-center justify-center px-3 py-3 hover:text-[#1C1917] transition",
+                    "flex w-full items-center justify-center px-3 py-3 hover:text-[#1C1917] transition dark:text-gray-500 dark:hover:text-gray-300",
                     {
                       //clsx makes links gray 950 when activeSection is equal to what page we are on
-                      "text-gray-950": activeSection === link.name,
+                      "text-gray-950 dark:text-gray-200":
+                        activeSection === link.name,
                     }
                   )}
                   href={link.hash}
@@ -47,9 +50,9 @@ export default function Header() {
                     setTimeOfLastClick(Date.now());
                   }} //sets activesection to what link we click on in the header
                 >
-                  {link.name === activeSection && (
+                  {/* {link.name === activeSection && ( 
                     <motion.span
-                      className="bg-gray-200 rounded-full absolute inset-0 -z-10"
+                      className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-700"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
@@ -57,7 +60,7 @@ export default function Header() {
                         damping: 30,
                       }}
                     ></motion.span>
-                  )}
+                  )}*/}
 
                   {link.name}
                 </Link>

@@ -7,6 +7,11 @@ html {
   --line-color: #b5b6b9;
 }
 
+/* Styling the line in the vertical timeline component to have a whiter color in dark mode*/
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
 /* creating a custom border black class */
 
 .borderBlack {
